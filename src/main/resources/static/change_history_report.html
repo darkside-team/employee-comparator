@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>История изменения данных сотрудника</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" type="text/css" media="all"
+         href="css/main.css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div th:if="${not #lists.isEmpty(employees)}">
+   <table id="report_table" class="table table-striped">
+      <tr>
+         <th colspan="3" rowspan="2" class="left" th:utext="'Дата формирования отчета<br/>' + ${nowDate}">й14142</th>
+         <th colspan="7">История изменения данных сотрудника</th>
+      </tr>
+
+      <tr>
+         <th colspan="31">&nbsp;</th>
+      </tr>
+      <tr class="gray">
+         <td><b>Имя</b></td>
+         <td><b>Фамилия</b></td>
+         <td><b>Логин в Дискорде</b></td>
+         <td><b>Внутренний логин</b></td>
+         <td><b>Отдел</b></td>
+         <td><b>Роль</b></td>
+         <td><b>Должность</b></td>
+         <td><b>Производительность                                              </b></td>
+         <td><b>Качество                                                        </b></td>
+         <td><b>Эффективность                                                   </b></td>
+         <td><b>Производительность (за прошлый период)                          </b></td>
+         <td><b>Качество  (за прошлый период)                                   </b></td>
+         <td><b>Эффективность  (за прошлый период)                              </b></td>
+         <td><b>Среднее кол-во задач за период                                  </b></td>
+         <td><b>Средняя сложность задач за период                               </b></td>
+         <td><b>Знание принципов актуальности и полноты текста                  </b></td>
+         <td><b>Умение оценивать трудоемкость и сложность задач                 </b></td>
+         <td><b>Знание текстового редактора  Word                               </b></td>
+         <td><b>Знание Java                                                     </b></td>
+         <td><b>Знание JavaScript + React                                       </b></td>
+         <td><b>Знание шаблонов проектирования                                  </b></td>
+         <td><b>Знание BPMN                                                     </b></td>
+         <td><b>Знание UML                                                      </b></td>
+         <td><b>Работа с требованиями с применением метологии системного анализа</b></td>
+         <td><b>Дата изменения</b></td>
+         <td><b>Кем изменено</b></td>
+         <td><b>Источник изменения</b></td>
+      </tr>
+
+      <tr th:each ="employeeRev,stat  : ${employees}" th:class="${stat.first}? 'bold'">
+         <td th:class="${! stat.last && !employeeRev.firstName.equals(employees.get((stat.index)+1).firstName)} ? 'red' : ''" th:utext="${employeeRev.firstName}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.lastName.equals(employees.get((stat.index)+1).lastName)} ? 'red' : ''" th:utext="${employeeRev.lastName}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.discordLogin.equals(employees.get((stat.index)+1).discordLogin)} ? 'red' : ''" th:utext="${employeeRev.discordLogin}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.internalLogin.equals(employees.get((stat.index)+1).internalLogin)} ? 'red' : ''" th:utext="${employeeRev.internalLogin}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.department.name.equals(employees.get((stat.index)+1).department.name)} ? 'red' : ''" th:utext="${employeeRev.department.name}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.role.name.equals(employees.get((stat.index)+1).role.name)} ? 'red' : ''" th:utext="${employeeRev.role.name}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.post.name.equals(employees.get((stat.index)+1).post.name)} ? 'red' : ''" th:utext="${employeeRev.post.name}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.performanceCurrValue.equals(employees.get((stat.index)+1).indicators.performanceCurrValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.performanceCurrValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.qualityCurrValue.equals(employees.get((stat.index)+1).indicators.qualityCurrValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.qualityCurrValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.efficiencyCurrValue.equals(employees.get((stat.index)+1).indicators.efficiencyCurrValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.efficiencyCurrValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.performancePrevValue.equals(employees.get((stat.index)+1).indicators.performancePrevValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.performancePrevValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.qualityPrevValue.equals(employees.get((stat.index)+1).indicators.qualityPrevValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.qualityPrevValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.efficiencyPrevValue.equals(employees.get((stat.index)+1).indicators.efficiencyPrevValue)} ? 'red' : ''" th:utext="${employeeRev.indicators.efficiencyPrevValue}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.avgTaskCount.equals(employees.get((stat.index)+1).indicators.avgTaskCount)} ? 'red' : ''" th:utext="${employeeRev.indicators.avgTaskCount}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.avgTaskComplexity.equals(employees.get((stat.index)+1).indicators.avgTaskComplexity)} ? 'red' : ''" th:utext="${employeeRev.indicators.avgTaskComplexity}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator1.equals(employees.get((stat.index)+1).indicators.umkIndicator1)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator1}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator2.equals(employees.get((stat.index)+1).indicators.umkIndicator2)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator2}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator3.equals(employees.get((stat.index)+1).indicators.umkIndicator3)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator3}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator4.equals(employees.get((stat.index)+1).indicators.umkIndicator4)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator4}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator5.equals(employees.get((stat.index)+1).indicators.umkIndicator5)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator5}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator6.equals(employees.get((stat.index)+1).indicators.umkIndicator6)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator6}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator7.equals(employees.get((stat.index)+1).indicators.umkIndicator7)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator7}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator8.equals(employees.get((stat.index)+1).indicators.umkIndicator8)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator8}">qqq</td>
+         <td th:class="${! stat.last && !employeeRev.indicators.umkIndicator9.equals(employees.get((stat.index)+1).indicators.umkIndicator9)} ? 'red' : ''" th:utext="${employeeRev.indicators.umkIndicator9}">qqq</td>
+        <td th:utext="${#temporals.format(employeeRev.modifiedDate, 'dd.MM.yyyy HH:mm:ss')}">qqq</td>
+         <td th:with="employee=${employeeRev}" th:utext="${employeeRev.lastModifiedBy}">qqq</td>
+         <td th:with="employee=${employeeRev}" th:utext="${employeeRev.modificationSource.name}">qqq</td>
+      </tr>
+   </table>
+</div>
+
+</body>
+
+</html>

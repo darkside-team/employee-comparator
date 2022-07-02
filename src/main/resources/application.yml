@@ -1,0 +1,79 @@
+server:
+  port: 8080
+
+employee:
+  data.generation.enabled: true
+
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: "classpath:/static/"
+  security:
+    oauth2:
+      client:
+        registration:
+          discord:
+            provider: discord
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:8080/login/oauth2/code/discord"
+            scope: identify
+        provider:
+          discord:
+            authorization-uri: "https://discord.com/api/oauth2/authorize"
+            token-uri: "https://discord.com/api/oauth2/token"
+            user-info-uri: "https://discord.com/api/users/@me"
+            user-name-attribute: username
+            user-info-authentication-method: header
+#      resourceserver:
+#        jwt:
+#          issuer-uri: "https://discord.com"
+
+  data:
+    rest:
+      detection-strategy: annotated
+      basePath: /api
+  h2.console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:darkside
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    initialization-mode: always
+    continue-on-error: false
+    hikari:
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: AssetHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: true
+logging:
+  level:
+    ru.darkside.scaffold: debug
+    org.hibernate.SQL: info
+    org.hibernate.type: off
+    org.springframework: error
+    org.springframework.data: ERROR
+    com.fasterxml.jackson: ERROR
+    org.springframework.web: DEBUG
+    org.springframework.web.HttpLogging: ERROR
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.batch: ERROR

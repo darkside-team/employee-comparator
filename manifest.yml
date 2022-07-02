@@ -1,0 +1,11 @@
+applications:
+- name: scaffold
+  buildpack: 'https://github.com/cloudfoundry/java-buildpack.git#v3.3.0'
+  instances: 1
+  random-route: true
+  memory: 1G
+  path: target/scaffold-0.0.1-SNAPSHOT.jar
+  env:
+    DEBUG: "true"
+    SPRING_PROFILE_ACTIVE: cloud
+
