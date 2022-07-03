@@ -88,12 +88,16 @@ public class EmployeeRepositoryEventHandler {
                 departmentRepository.findAll().spliterator(), false).collect(Collectors.toList()));
         var randomEmployeeRole = new RandomEmployeeRole(StreamSupport.stream(
                 employeeRoleRepository.findAll().spliterator(), false).collect(Collectors.toList()));
+        var randomEmployeeIndicators = new RandomEmployeeIndicators();
 
         if (employee.getDepartment() == null) {
             employee.setDepartment(randomEmployeeDepartment.get());
         }
         if (employee.getRole() == null) {
             employee.setRole(randomEmployeeRole.get());
+        }
+        if (employee.getIndicators() == null) {
+            employee.setIndicators(randomEmployeeIndicators.get());
         }
 
         employee.setModificationSource(modificationSourceRepository.findByCode("HAND_INPUT").get());

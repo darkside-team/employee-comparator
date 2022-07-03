@@ -100,117 +100,117 @@ export class EmployeeForm extends AbstractForm {
             <Label for="internalLogin">
             Внутренний логин:
             </Label>
-            <Input value={internalLogin || ""} onChange={(e) => { this.setState({internalLogin: e.target.value}); }} />                      
+            <Input value={internalLogin} onChange={(e) => { this.setState({internalLogin: e.target.value}); }} />                      
             <Label for="discordLogin">
             Discord логин:
             </Label>
-            <Input value={discordLogin || ""} onChange={(e) => { this.setState({discordLogin: e.target.value}); }} />    
+            <Input value={discordLogin} onChange={(e) => { this.setState({discordLogin: e.target.value}); }} />    
             
             <Label for="performanceCurrValue">
             {IndicatorMap.getIndicatorName('performanceCurrValue')}:
             </Label>
-            <Input value={indicators.performanceCurrValue || "1"} onChange={(e) => { 
+            <Input value={indicators.performanceCurrValue} onChange={(e) => { 
                 this.state.indicators.performanceCurrValue = e.target.value;
                 this.setState(this.state.indicators); }}/>
             <Label for="qualityCurrValue">
             {IndicatorMap.getIndicatorName('qualityCurrValue')}:
             </Label>
-            <Input value={indicators.qualityCurrValue || "1"} onChange={(e) => { 
+            <Input value={indicators.qualityCurrValue} onChange={(e) => { 
                this.state.indicators.qualityCurrValue = e.target.value;
                this.setState(this.state.indicators); }}/>
             <Label for="efficiencyCurrValue">
             {IndicatorMap.getIndicatorName('efficiencyCurrValue')}:
             </Label>
-            <Input value={indicators.efficiencyCurrValue || "1"} onChange={(e) => { 
+            <Input value={indicators.efficiencyCurrValue} onChange={(e) => { 
               this.state.indicators.efficiencyCurrValue = e.target.value;
               this.setState(this.state.indicators); }}/>
 
             <Label for="performancePrevValue">
             {IndicatorMap.getIndicatorName('performancePrevValue')}:
             </Label>
-            <Input value={indicators.performancePrevValue || "1"} onChange={(e) => { 
+            <Input value={indicators.performancePrevValue} onChange={(e) => { 
                 this.state.indicators.performancePrevValue = e.target.value;
                 this.setState(this.state.indicators); }}/>
             <Label for="qualityPrevValue">
             {IndicatorMap.getIndicatorName('qualityPrevValue')}:
             </Label>
-            <Input value={indicators.qualityPrevValue || "1"} onChange={(e) => { 
+            <Input value={indicators.qualityPrevValue} onChange={(e) => { 
                this.state.indicators.qualityPrevValue = e.target.value;
                this.setState(this.state.indicators); }}/>
             <Label for="efficiencyPrevValue">
             {IndicatorMap.getIndicatorName('efficiencyPrevValue')}:
             </Label>
-            <Input value={indicators.efficiencyPrevValue || "1"} onChange={(e) => { 
+            <Input value={indicators.efficiencyPrevValue} onChange={(e) => { 
               this.state.indicators.efficiencyPrevValue = e.target.value;
               this.setState(this.state.indicators); }}/>
            
             <Label for="avgTaskCount">
             {IndicatorMap.getIndicatorName('avgTaskCount')}:
             </Label>
-            <Input value={indicators.avgTaskCount || "0"} onChange={(e) => { 
+            <Input value={indicators.avgTaskCount} onChange={(e) => { 
               this.state.indicators.avgTaskCount = e.target.value;
               this.setState(this.state.indicators); }}/>
            
             <Label for="avgTaskComplexity">
             {IndicatorMap.getIndicatorName('avgTaskComplexity')}:
             </Label>
-            <Input value={indicators.avgTaskComplexity || "0"} onChange={(e) => { 
+            <Input value={indicators.avgTaskComplexity} onChange={(e) => { 
               this.state.indicators.avgTaskComplexity = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator1">
             {IndicatorMap.getIndicatorName('umkIndicator1')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator1 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator1} onChange={(e) => { 
               this.state.indicators.umkIndicator1 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator2">
             {IndicatorMap.getIndicatorName('umkIndicator2')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator2 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator2} onChange={(e) => { 
               this.state.indicators.umkIndicator2 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator3">
             {IndicatorMap.getIndicatorName('umkIndicator3')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator3 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator3} onChange={(e) => { 
               this.state.indicators.umkIndicator3 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator4">
             {IndicatorMap.getIndicatorName('umkIndicator4')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator4 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator4} onChange={(e) => { 
               this.state.indicators.umkIndicator4 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator5">
             {IndicatorMap.getIndicatorName('umkIndicator5')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator5 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator5} onChange={(e) => { 
               this.state.indicators.umkIndicator5 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator6">
             {IndicatorMap.getIndicatorName('umkIndicator6')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator6 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator6} onChange={(e) => { 
               this.state.indicators.umkIndicator6 = e.target.value;
               this.setState(this.state.indicators); }}/>
           
             <Label for="umkIndicator7">
             {IndicatorMap.getIndicatorName('umkIndicator7')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator7 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator7} onChange={(e) => { 
               this.state.indicators.umkIndicator7 = e.target.value;
               this.setState(this.state.indicators); }}/>
 
             <Label for="umkIndicator8">
             {IndicatorMap.getIndicatorName('umkIndicator8')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator8 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator8} onChange={(e) => { 
               this.state.indicators.umkIndicator8 = e.target.value;
               this.setState(this.state.indicators); }}/>
 
@@ -218,7 +218,7 @@ export class EmployeeForm extends AbstractForm {
             <Label for="umkIndicator9">
             {IndicatorMap.getIndicatorName('umkIndicator9')}:
             </Label>
-            <UmkIndicatorSelectBox value={indicators.umkIndicator9 || "1"} onChange={(e) => { 
+            <UmkIndicatorSelectBox value={indicators.umkIndicator9} onChange={(e) => { 
               this.state.indicators.umkIndicator9 = e.target.value;
               this.setState(this.state.indicators); }}/>
                        

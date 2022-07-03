@@ -64,7 +64,7 @@ public class SecurityConfig {
             .and()
                 .authorizeRequests(request -> request
                         .antMatchers( "/built/**", "/style/**", "/static/**", "/h2-console/**", "/explorer/**", "/favicon.ico", "/login**").permitAll()
-                        //.antMatchers("/api/**").permitAll()
+                        //antMatchers("/api/**").permitAll()
                         .anyRequest().authenticated()
                 )
             //.httpBasic(Customizer.withDefaults())
